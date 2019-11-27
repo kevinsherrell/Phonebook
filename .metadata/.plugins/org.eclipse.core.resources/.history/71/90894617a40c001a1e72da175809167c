@@ -1,0 +1,8 @@
+package com.claim;
+
+public class Main {
+ public static void main(String[]args) {
+	 Person person1 = new Person("Kevin", "","Sherrell");
+	 System.out.println(person1.getName());
+ }
+}

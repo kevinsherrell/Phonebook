@@ -1,0 +1,13 @@
+package com.claim;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[]args) {
+		People person = new People("Kevin", "M.","Sherrell");
+		Entry newEntry = new Entry();
+		person.getFirstName();
+		person.getLastName();
+		System.out.println(newEntry);
+	}
+}

@@ -1,0 +1,37 @@
+package com.claim;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please select an option from the folowing menu: ");
+		System.out.println("(1) Add New Record");
+		System.out.println("(2) Find Record");
+		System.out.println("(3) Delete Record");
+		System.out.println("(4) Exit");
+		int choice = sc.nextInt();
+		
+		if(choice == 1) {
+//			do something
+		}else if(choice == 2) {
+//			do something
+		}else if(choice == 3) {
+//			do something
+		}else if(choice == 3) {
+//			do something
+		}
+	}
+
+
+	public static void addRecord() {
+		System.out.println("First Name: ");
+		System.out.println("Last Name: ");
+		System.out.println("House Number: ");
+		System.out.println("Street Name: ");
+		System.out.println("City: ");
+		System.out.println("State: ");
+		System.out.println("Zip: ");
+		System.out.println("Phone Number: ");
+	}
+}

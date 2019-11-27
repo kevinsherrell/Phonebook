@@ -1,0 +1,16 @@
+package com.claim;
+
+public class Entry {
+	private static People newPerson = new People();
+	private static Address newAddress = new Address();
+	private static PhoneNumber newPhoneNumber = new PhoneNumber();
+	
+	public Entry() {
+		this(newPerson, newAddress, newPhoneNumber);
+	}
+	public Entry(People newPerson, Address newAddress, PhoneNumber newPhoneNumber) {
+		this.newPerson = newPerson;
+		this.newAddress = newAddress;
+		this.newPhoneNumber = newPhoneNumber;
+	}
+}

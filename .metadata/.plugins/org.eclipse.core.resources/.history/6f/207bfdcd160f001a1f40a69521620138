@@ -1,0 +1,29 @@
+package com.claim;
+
+public class Person {
+	private String firstName, middleInitial, lastName;
+	
+	public Person() {
+		this(" ", ""," ");
+	}
+	public Person(String firstName, String middleInitial, String lastName) {
+		this.firstName = firstName;
+		this.middleInitial = middleInitial;
+		this.lastName = lastName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	public void setMiddleInitial(String middleInitial) {
+		this.middleInitial = middleInitial;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	public String getName() {
+		return firstName + " " + middleInitial + " " + lastName;
+	}
+	
+}
