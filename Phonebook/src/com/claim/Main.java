@@ -6,171 +6,107 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+//        System.out.println("Welcome to the phone book system. Please choose from the menu below: \n(1)Add Entry\n(2)Delete Entry\n(3)Search\n(4)Exit");
         boolean running = true;
+        Entry[] entries = new Entry[1];
+        Entry entry = new Entry();
+        String input = sc.nextLine();
 
 
-//        Person newPerson = new Person("Kevin", "M", "Sherrell ");
-//        Address newAddress = new Address("1520", "Washington Ave.", "St. Louis", "MO", "63103 ");
-//        PhoneNumber newPhoneNumber = new PhoneNumber("555-555-5555");
-//
-//        Person person2 = new Person("Marvin", "Gay");
-//        Address address2 = new Address();
-//        PhoneNumber phone2 = new PhoneNumber("677-555-5555");
-//
-//        Entry entry = new Entry(newPerson, newAddress, newPhoneNumber);
-//        Entry secondEntry = new Entry(person2, address2, phone2);
-//
-//
-//        Entry[] entries = new Entry[]{entry};
-//        Entry entryStart = new Entry();
-//        Entry[] entries = new Entry[] {entryStart};
+            createEntry(input);
+            addToArray(createEntry(input), entries);
 
-
-        while (running) {
-            System.out.println("Welcome to the phone book system. Please choose from the following menu: \n(1) Search\n(2) Add\n(3) Delete\n(4) Exit");
-
-            int choice = sc.nextInt();
-
-            if (choice == 1) {
-                System.out.println("Your choice was 1");
-            } else if (choice == 2) {
-                boolean addEntryRunning = true;
-                while (addEntryRunning) {
-//
-                    System.out.println("Please enter your information : ");
-                    sc.nextLine();
-                    String inputString = sc.nextLine();
-                    addEntry(inputString);
-                    System.out.println("Would you like to add another entry? : (y)es (n)o");
-//
-                    char choice2 = sc.nextLine().charAt(0);
-                    if (choice2 == 'y') {
-                        sc.nextLine();
-//
-
-                        continue;
-                    } else {
-                        addEntryRunning = false;
-                        break;
-                    }
-                }
-
-            } else if (choice == 3) {
-                System.out.println("Your choice was 3");
-
-            } else if (choice == 4) {
-                running = false;
-                System.out.println("Your choice was 4");
-                break;
-            }
-        }
     }
 
-//    public static void createEntry(String information) {
-////        CONVERT INPUT STRING TO ARRAY, SEPARATED BY COMMAS
-//        String[] informationSplit = information.split(",");
-////        PERSON
-//        String personInfo = informationSplit[0];
-//        String[] personInfoSplit = personInfo.split(" ");
-////        ADDRESS
-//        String addressInfo = "";
-//        for (int i = 1; i <= informationSplit.length - 2; i++) {
-//            addressInfo += informationSplit[i];
-//        }
-//        String[] addressInfoSplit = addressInfo.split(" ");
-////        PHONE
-//        String phoneInfo = informationSplit[informationSplit.length - 1];
-//        String[] phoneInfoSplit = phoneInfo.split(" ");
-//
-//        Person person = new Person();
-//        person.setFirstName(personInfoSplit[0]);
-//        person.setLastName(personInfoSplit[personInfoSplit.length - 1]);
-//        if (personInfoSplit.length == 3) {
-//            person.setMiddle1(personInfoSplit[1]);
-//        } else if (personInfoSplit.length == 4) {
-//            person.setMiddle2(personInfoSplit[2]);
-//        }
-//        Address address = new Address();
-////        address.setHouseNumber();
-////        address.setStreet();
-////        address.setCity();
-////        address.setState();
-////        address.setZip();
-//        PhoneNumber phoneNumber = new PhoneNumber();
-////        phoneNumber.setPhoneNumber();
-//        Entry entry = new Entry(person, address, phoneNumber);
-//        Entry[] entries = new Entry[1];
-//        addEntry(entries, entry);
-//    }
 
+    public static Entry createEntry(String input) {
+        System.out.println("Create Entry has been called");
+//        CONVERT INPUT STRING TO AN ARRAY, SEPARATED BY COMMAS
+        String[] inputSplit = input.split(",");
+//        check if split worked
+//        for(String s: inputSplit){
+//            System.out.println(s);
+//        }
 
-    public static void addEntry(String information) {
-//        CONVERT INPUT STRING TO ARRAY, SEPARATED BY COMMAS
-        String[] informationSplit = information.split(",");
-//        Check if split worked
-        for (int i = 0; i < informationSplit.length; i++) {
-            System.out.println("INFORMATION STRING" + informationSplit[i]);
-        }
 //        PERSON
-        String personInfo = informationSplit[0];
-        String[] personInfoSplit = personInfo.split(" ");
-//        Check if split worked
-        for (String s : personInfoSplit) {
-            System.out.println("PERSON INFORMATION" + s);
+        String firstName, middle, lastName;
+        String personInput = inputSplit[0];
+        String[] personInputSplit = personInput.split(" ");
+        for (String s : personInputSplit) {
+            System.out.println(s);
         }
-//        ADDRESS
-        String addressInfo = "";
-        for (int i = 1; i < informationSplit.length - 2; i++) {
-            addressInfo += informationSplit[i];
+        firstName = personInputSplit[0].trim();
+        middle = "";
+        for (int i = 1; i < personInputSplit.length - 1; i++) {
+            middle += personInputSplit[i] + " ";
+//            System.out.println(middle);
         }
-        addressInfo = addressInfo.trim();
-        System.out.println(addressInfo);
-        System.out.println(addressInfo.trim());
-        String[] addressInfoSplit = addressInfo.split(" ");
-//        Check if address info split works
-        for (String s : addressInfoSplit) {
-            System.out.println("ADDRESS INFORMATION" + s);
-        }
-//        PHONE
-        String phoneInfo = informationSplit[informationSplit.length - 1].trim();
-        System.out.println("PHONE INFO: " + phoneInfo);
+        lastName = personInputSplit[personInputSplit.length - 1];
 
-        Person person = new Person();
-        System.out.println(personInfoSplit.length);
-        person.setFirstName(personInfoSplit[0]);
-        System.out.println("1" + person.getFirstName());
-        person.setLastName(personInfoSplit[personInfoSplit.length - 1]);
-        if (personInfoSplit.length > 2) {
-            person.setMiddle1(personInfoSplit[1]);
-        } else if (personInfoSplit.length > 4) {
-            person.setMiddle2(personInfoSplit[2]);
+//       ADDRESS
+        String addressInput = "";
+        for (int i = 1; i < inputSplit.length - 1; i++) {
+            addressInput += inputSplit[i] + "";
         }
-        Address address = new Address();
-//        address.setHouseNumber();
-//        address.setStreet();
-//        address.setCity();
-//        address.setState();
-//        address.setZip();
-        PhoneNumber phoneNumber = new PhoneNumber();
-//        phoneNumber.setPhoneNumber();
-//        Entry entry = new Entry(person, address, phoneNumber);
+//        addressInput = addressInput.trim();
 
-        Entry entryStart = new Entry(person, address, phoneNumber);
-        Entry[] entries = new Entry[]{entryStart};
+//        System.out.println(addressInput);
 
-        int length = entries.length;
-        Entry[] newArray = new Entry[length + 1];
-        System.out.println(newArray.toString());
-        for (int i = 0; i < length; i++) {
-            newArray[i] = entries[i];
-            System.out.println(newArray[i]);
-        }
-        newArray[newArray.length - 1] = entryStart;
+        String[] addressInputSplit = addressInput.split(" ");
 
-        for (int i = 0; i < newArray.length; i++) {
-            System.out.println(newArray[i].toString());
-        }
+//        for(String s: addressInputSplit){
+//            System.out.print(s);
+//        }
+//        System.out.println(addressInputSplit.length);
+
+        String houseNumber, street, city, state, zip;
+
+        houseNumber = addressInputSplit[0];
+
+//        System.out.println(houseNumber);
+
+        street = addressInputSplit[1] + " " + addressInputSplit[2];
+
+//        System.out.println(street);
+
+        city = addressInputSplit[3] + " " + addressInputSplit[4];
+
+//        System.out.println(city);
+
+        state = addressInputSplit[5];
+
+//        System.out.println(state);
+
+        zip = addressInputSplit[addressInputSplit.length - 1];
+
+//        System.out.println(zip);
+
+//        Phone Number
+        String phoneNumber = inputSplit[inputSplit.length - 1];
+//        System.out.println(phoneNumber.trim());
+
+//        ACTUALLY CREATING THE ENTRY
+        Person person = new Person(firstName, middle, lastName);
+        Address address = new Address(houseNumber, street, city, state, zip);
+        PhoneNumber phone = new PhoneNumber(phoneNumber);
+
+//        System.out.println(new Entry(person, address, phone));
+
+        return new Entry(person, address, phone);
+
     }
 
-
+    public static Entry [] addToArray(Entry entry, Entry [] entries){
+        entries[entries.length -1] = entry;
+        System.out.println("Line 102 (original array): "+ entries[0] + " ArrayLength: "+entries.length);
+        Entry [] newArray = new Entry[entries.length + 1];
+        System.out.println("Line 104 (new larger array Array created): " + newArray[0] + " ArrayLength: "+newArray.length);
+        for(int i = 0; i < entries.length; i++){
+            newArray[i] = entries[i];
+        System.out.println("line 107 new array: " + newArray[i]);
+        }
+        System.out.println("Line 109: " + newArray[0] +" ArrayLength: "+ newArray.length);
+        return newArray;
+    }
 }

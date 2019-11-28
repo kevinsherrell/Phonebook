@@ -7,17 +7,17 @@ public class Entry {
 
     public Entry() {
         this(new Person(
-                        "first", "middle", "last"),
-                new Address("houseNumber", "street", "city", "state", "zip"),
-                new PhoneNumber("phoneNumber"));
+                        "", "", ""),
+                new Address("", "", "", "", ""),
+                new PhoneNumber(""));
     }
 
     public Entry(Person person, Address address, PhoneNumber phoneNumber) {
         this.person = person;
         this.address = address;
         this.phoneNumber = phoneNumber;
-    }
 
+    }
 
 
     public Person getPerson() {
@@ -36,4 +36,6 @@ public class Entry {
 
         return person.toString() + address.toString() + phoneNumber.toString();
     }
+
+    //    METHODS
 }

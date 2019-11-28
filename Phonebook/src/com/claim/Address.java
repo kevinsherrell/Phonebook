@@ -4,7 +4,7 @@ public class Address {
     private String houseNumber, street, city, state, zip;
 
     public Address() {
-        this("default", "default", "default", "default", "default");
+        this("", "", "", "", "");
     }
 
     public Address(String houseNumber, String street, String city, String state, String zip) {

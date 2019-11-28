@@ -3,7 +3,7 @@ package com.claim;
 public class PhoneNumber {
 	private String phoneNumber;
 	public PhoneNumber() {
-		this("default");
+		this("");
 	}
 	public PhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;

@@ -1,48 +1,20 @@
 package com.claim;
 
 public class Person {
-    private String firstName, middle1, middle2, lastName;
-
-    public Person() {
-        this("", "", "");
+    private String firstName, middle,  lastName;
+    public Person(){
+        this("","","");
     }
-
-    public Person(String firstName, String middle1, String middle2, String lastName) {
+    public Person(String firstName, String middle, String lastName) {
         this.firstName = firstName;
-        this.middle1 = middle1;
-        this.middle2 = middle2;
+        this.middle = middle;
         this.lastName = lastName;
     }
-
-    public Person(String firstName, String middle1, String lastName) {
-        this.firstName = firstName;
-        this.middle1 = middle1;
-        this.lastName = lastName;
-    }
-
-    public Person(String firstName, String lastName) {
+    public Person(String firstName, String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
-    public String getMiddle1() {
-        return middle1;
-    }
-
-    public void setMiddle1(String middle1) {
-        this.middle1 = middle1;
-    }
-
-    public String getMiddle2() {
-        return middle2;
-    }
-
-    public void setMiddle2(String middle2) {
-        this.middle2 = middle2;
-    }
-
     public String getFirstName() {
-        System.out.println(firstName);
         return firstName;
     }
 
@@ -51,16 +23,14 @@ public class Person {
     }
 
     public String getMiddle() {
-        System.out.println(middle1);
-        return middle1;
+        return middle;
     }
 
     public void setMiddle(String middle) {
-        this.middle1 = middle;
+        this.middle = middle;
     }
 
     public String getLastName() {
-        System.out.println(lastName);
         return lastName;
     }
 
@@ -68,14 +38,24 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public String toString() {
-        if (middle2 != null) {
-            return firstName + middle1 + middle2 + lastName;
-        } else if (middle2 == null) {
-            return firstName + middle1 + lastName;
-        } else {
-            return firstName + lastName;
+    public int getNameLength(){
+       String [] array = new String[] {firstName, middle, lastName};
+       String [] newArray = new String[array.length];
+       int counter = 0;
+       for(int i =0; i < array.length; i++){
+           if(array[i] != null){
+               counter += 1;
+           }
+       }
+       System.out.println(counter);
+       return (counter);
+   }
 
+   public String toString(){
+        if(this.getNameLength() == 3){
+            return firstName.trim() + " " + middle.trim() + " " + lastName.trim();
         }
-    }
+        return firstName.trim() + lastName.trim();
+   }
+
 }
