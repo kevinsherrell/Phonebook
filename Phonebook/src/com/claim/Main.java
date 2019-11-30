@@ -7,38 +7,44 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Welcome to the phone book system. Please choose from the menu below: \n(1)Add Entry\n(2)Delete Entry\n(3)Search\n(4)Exit");
         boolean running = true;
         Entry[] entries = new Entry[1];
 
-        int menuChoice = sc.nextInt();
         while (running) {
-            switch (menuChoice) {
-                case 1:
-                    boolean addEntryRunning = true;
-                    while (addEntryRunning) {
-                        sc.nextLine();
-                        System.out.println("Please enter your information: ");
-                        String input = sc.nextLine();
-                        Entry entry = createEntry(input);
-                        entries = addEntry(entry, entries);
-                        System.out.println("Would you like to add another entry? (y)(n)");
-                        char continueEntry = sc.nextLine().charAt(0);
-                        if (continueEntry == 'y') {
-                            continue;
-                        } else if (continueEntry == 'n') {
-                            break;
-                        } else if (continueEntry != 'y' || continueEntry != 'n') {
-                            System.out.println("Invalid choice. Please enter y or n.");
-                        }
+            System.out.println("Welcome to the phone book system. Please choose from the menu below: \n(1)Add Entry\n(2)Delete Entry\n(3)Search\n(4)Exit");
+            int menuChoice = sc.nextInt();
+
+//            System.out.println("Thank you for using the phone book system. Good bye.");
+            if(menuChoice == 1){
+                boolean addEntryRunning = true;
+                while (addEntryRunning) {
+                    sc.nextLine();
+
+                    System.out.println("Please enter your information: ");
+                    String input = sc.nextLine();
+                    Entry entry = createEntry(input);
+                    entries = addEntry(entry, entries);
+                    System.out.println("Would you like to add another entry? (y)(n)");
+                    char continueEntry = sc.nextLine().charAt(0);
+                    if (continueEntry == 'y') {
+                        continue;
+                    } else if (continueEntry == 'n') {
+//                            break;
+                        addEntryRunning = false;
+                    } else if (continueEntry != 'y' || continueEntry != 'n') {
+                        System.out.println("Invalid choice. Please enter y or n.");
                     }
-                case 2:
-                case 3:
-                case 4:
-                    System.out.println("Thank you for using the phone book system. Good bye.");
-                    running = false;
-                    break;
+
+                }
+            }else if(menuChoice == 2){
+
+            }else if(menuChoice == 3){
+
+            }else if(menuChoice == 4){
+                running = false;
+                break;
             }
+
         }
     }
 
@@ -139,5 +145,10 @@ public class Main {
 
 
         return newArray;
+    }
+
+    public static void deleteEntry(Entry[] entries) {
+        System.out.println(Arrays.toString(entries));
+
     }
 }
