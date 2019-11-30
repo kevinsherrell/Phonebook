@@ -1,22 +1,45 @@
 package com.claim;
 
 import java.sql.SQLOutput;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-//        System.out.println("Welcome to the phone book system. Please choose from the menu below: \n(1)Add Entry\n(2)Delete Entry\n(3)Search\n(4)Exit");
+        System.out.println("Welcome to the phone book system. Please choose from the menu below: \n(1)Add Entry\n(2)Delete Entry\n(3)Search\n(4)Exit");
         boolean running = true;
         Entry[] entries = new Entry[1];
-        Entry entry = new Entry();
-        String input = sc.nextLine();
 
-
-            createEntry(input);
-            addToArray(createEntry(input), entries);
-
+        int menuChoice = sc.nextInt();
+        while (running) {
+            switch (menuChoice) {
+                case 1:
+                    boolean addEntryRunning = true;
+                    while (addEntryRunning) {
+                        sc.nextLine();
+                        System.out.println("Please enter your information: ");
+                        String input = sc.nextLine();
+                        Entry entry = createEntry(input);
+                        entries = addEntry(entry, entries);
+                        System.out.println("Would you like to add another entry? (y)(n)");
+                        char continueEntry = sc.nextLine().charAt(0);
+                        if (continueEntry == 'y') {
+                            continue;
+                        } else if (continueEntry == 'n') {
+                            break;
+                        } else if (continueEntry != 'y' || continueEntry != 'n') {
+                            System.out.println("Invalid choice. Please enter y or n.");
+                        }
+                    }
+                case 2:
+                case 3:
+                case 4:
+                    System.out.println("Thank you for using the phone book system. Good bye.");
+                    running = false;
+                    break;
+            }
+        }
     }
 
 
@@ -97,16 +120,24 @@ public class Main {
 
     }
 
-    public static Entry [] addToArray(Entry entry, Entry [] entries){
-        entries[entries.length -1] = entry;
-        System.out.println("Line 102 (original array): "+ entries[0] + " ArrayLength: "+entries.length);
-        Entry [] newArray = new Entry[entries.length + 1];
-        System.out.println("Line 104 (new larger array Array created): " + newArray[0] + " ArrayLength: "+newArray.length);
-        for(int i = 0; i < entries.length; i++){
+    public static Entry[] addEntry(Entry entry, Entry[] entries) {
+
+        System.out.println("Initial Array: \n" + Arrays.toString(entries));
+
+        Entry[] newArray = new Entry[entries.length + 1];
+
+        System.out.println("Line 104 (new larger array Array created): " + newArray[0] + " ArrayLength: " + newArray.length);
+
+        for (int i = 0; i < entries.length; i++) {
             newArray[i] = entries[i];
-        System.out.println("line 107 new array: " + newArray[i]);
+            newArray[entries.length - 1] = entry;
+            System.out.println("line 107 new array: " + newArray[i]);
         }
-        System.out.println("Line 109: " + newArray[0] +" ArrayLength: "+ newArray.length);
+
+
+        System.out.println("Resulting Array: \n" + Arrays.toString(newArray));
+
+
         return newArray;
     }
 }

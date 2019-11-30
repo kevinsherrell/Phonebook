@@ -1,5 +1,5 @@
 package com.claim;
-
+import java.util.Arrays;
 public class Address {
     private String houseNumber, street, city, state, zip;
 
@@ -58,5 +58,4 @@ public class Address {
     public String toString() {
         return houseNumber + " " + street + " " + city + " " + state + " " + zip;
     }
-
 }

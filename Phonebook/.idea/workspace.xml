@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="302dfd7c-8a43-448d-ba36-3c423149d17d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/claim/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/claim/Address.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/claim/Entry.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/claim/Entry.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/com/claim/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/claim/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/claim/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/claim/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/claim/PhoneNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/claim/PhoneNumber.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/claim/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/claim/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/claim/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/claim/Entry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/claim/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/claim/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/claim/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/claim/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/claim/PhoneNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/claim/PhoneNumber.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +29,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
@@ -95,7 +88,9 @@
       <workItem from="1574908378858" duration="5733000" />
       <workItem from="1574952829286" duration="77000" />
       <workItem from="1574952921563" duration="201000" />
-      <workItem from="1574953144060" duration="2712000" />
+      <workItem from="1574953144060" duration="7163000" />
+      <workItem from="1575065735220" duration="1398000" />
+      <workItem from="1575089217171" duration="3056000" />
     </task>
     <servers />
   </component>
