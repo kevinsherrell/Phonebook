@@ -9,7 +9,7 @@ public class Main {
 
         boolean running = true;
         Entry[] entries = new Entry[1];
-
+        String addEntryGreeting = "Please Enter Your Information: ";
         while (running) {
             System.out.println("Welcome to the phone book system. Please choose from the menu below: \n(1)Add Entry\n(2)Delete Entry\n(3)Search\n(4)Exit");
             int menuChoice = sc.nextInt();
@@ -21,7 +21,7 @@ public class Main {
 
                     while (addEntryRunning) {
                         sc.nextLine();
-                        String addEntryGreeting = "Please Enter Your Information: ";
+
                         System.out.println(addEntryGreeting);
 
                         String input = sc.nextLine();
@@ -44,6 +44,9 @@ public class Main {
                     break;
                 case 2:
                     boolean searchRunning = true;
+                    System.out.println(addEntryGreeting);
+                    sc.nextLine();
+                    String input = sc.nextLine();
                     deleteEntry(entries);
                     break;
                 case 3:
@@ -158,7 +161,10 @@ public class Main {
     }
 
     public static void deleteEntry(Entry[] entries) {
-        System.out.println(Arrays.toString(entries));
-
+        System.out.println("Line 164: " + Arrays.toString(entries));
+//        Search for entry
+//        Loop over all entries and add all entries EXCEPT the found entry to a new array
+//        Return the new array
+//        Assign the new array to the entries array
     }
 }
