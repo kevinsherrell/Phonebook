@@ -50,6 +50,10 @@ public class Main {
                     deleteEntry(entries);
                     break;
                 case 3:
+                    sc.nextLine();
+                    String searchInput = sc.nextLine();
+                    searchEntry(entries, searchInput);
+                    break;
                 case 4:
                     System.out.println("Thank you for using the phone book system. Good bye.");
                     running = false;
@@ -160,6 +164,17 @@ public class Main {
         return newArray;
     }
 
+    public static Entry [] searchEntry(Entry[]entries, String input){
+        Entry[] results = new Entry[100];
+        for(int i=0; i < entries.length; i++){
+            if(entries[i].toString().contains(input)){
+                results[i] = entries[i];
+            }
+        }
+        System.out.println(results);
+        return results;
+    }
+
     public static void deleteEntry(Entry[] entries) {
         System.out.println("Line 164: " + Arrays.toString(entries));
 //        Search for entry
@@ -167,4 +182,5 @@ public class Main {
 //        Return the new array
 //        Assign the new array to the entries array
     }
+
 }
