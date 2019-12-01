@@ -21,8 +21,8 @@ public class Main {
 
                     while (addEntryRunning) {
                         sc.nextLine();
-
-                        System.out.println("Please enter your information: ");
+                        String addEntryGreeting = "Please Enter Your Information: ";
+                        System.out.println(addEntryGreeting);
 
                         String input = sc.nextLine();
 
