@@ -166,17 +166,16 @@ public class Main {
         return newArray;
     }
 
-    public static Entry[] searchEntry(Entry[] entries, String input) {
-        Entry[] results = new Entry[entries.length -1];
-        for (int i = 0; i < entries.length; i++) {
+    public static String searchEntry(Entry[] entries, String input) {
+        System.out.println("Please enter a search string: ");
+        String results = "";
+        for (int i = 0; i < entries.length -1; i++) {
             if (entries[i].getPerson().toString().contains(input) || entries[i].getAddress().toString().contains(input) || entries[i].getPhoneNumber().toString().contains(input)) {
-                System.out.println(entries[i]);
-                results[i] = entries[i];
-                System.out.println(results[i]);
+                results += entries[i] + "\n";
 
             }
         }
-        System.out.println("Line 176" + Arrays.toString(results));
+        System.out.println(results);
         return results;
     }
 
