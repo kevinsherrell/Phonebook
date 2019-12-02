@@ -47,7 +47,7 @@ public class Person {
                counter += 1;
            }
        }
-       System.out.println(counter);
+//       System.out.println(counter);
        return (counter);
    }
 

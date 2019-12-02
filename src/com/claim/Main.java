@@ -10,6 +10,8 @@ public class Main {
         boolean running = true;
         Entry[] entries = new Entry[1];
         String addEntryGreeting = "Please Enter Your Information: ";
+
+
         while (running) {
             System.out.println("Welcome to the phone book system. Please choose from the menu below: \n(1)Add Entry\n(2)Delete Entry\n(3)Search\n(4)Exit");
             int menuChoice = sc.nextInt();
@@ -61,7 +63,7 @@ public class Main {
                 default:
                     System.out.println("default has been reached");
             }
-
+            System.out.println(entries[0].getPerson().toString());
         }
     }
 
@@ -79,9 +81,9 @@ public class Main {
         String firstName, middle, lastName;
         String personInput = inputSplit[0];
         String[] personInputSplit = personInput.split(" ");
-        for (String s : personInputSplit) {
-            System.out.println(s);
-        }
+//        for (String s : personInputSplit) {
+//            System.out.println(s);
+//        }
         firstName = personInputSplit[0].trim();
         middle = "";
         for (int i = 1; i < personInputSplit.length - 1; i++) {
@@ -149,7 +151,7 @@ public class Main {
 
         Entry[] newArray = new Entry[entries.length + 1];
 
-        System.out.println("Line 104 (new larger array Array created): " + newArray[0] + " ArrayLength: " + newArray.length);
+//        System.out.println("Line 104 (new larger array Array created): " + newArray[0] + " ArrayLength: " + newArray.length);
 
         for (int i = 0; i < entries.length; i++) {
             newArray[i] = entries[i];
@@ -164,14 +166,17 @@ public class Main {
         return newArray;
     }
 
-    public static Entry [] searchEntry(Entry[]entries, String input){
-        Entry[] results = new Entry[100];
-        for(int i=0; i < entries.length; i++){
-            if(entries[i].toString().contains(input)){
+    public static Entry[] searchEntry(Entry[] entries, String input) {
+        Entry[] results = new Entry[entries.length -1];
+        for (int i = 0; i < entries.length; i++) {
+            if (entries[i].getPerson().toString().contains(input) || entries[i].getAddress().toString().contains(input) || entries[i].getPhoneNumber().toString().contains(input)) {
+                System.out.println(entries[i]);
                 results[i] = entries[i];
+                System.out.println(results[i]);
+
             }
         }
-        System.out.println(results);
+        System.out.println("Line 176" + Arrays.toString(results));
         return results;
     }
 
